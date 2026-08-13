@@ -25,10 +25,12 @@ In this repository, I will regularly upload:
 
 ## 🛠️ Technologies Used
 
-* Python
+* Python(Flask)
 * Git
 * GitHub
 * VS Code
+* Html55
+* CSS
 
 ## 📂 Repository Structure
 
