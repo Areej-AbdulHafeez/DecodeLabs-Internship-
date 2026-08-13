@@ -24,14 +24,6 @@ I used basic programming concepts and functions such as append() to add expenses
 * Python Programming
 * Flask
 
-## 📂 Project Structure
-
-Expense-Tracker/
-│
-├── index.html
-├── style.css
-└── README.md
-
 ## 🚀 How to Run
 
 1. Download or clone this repository.
