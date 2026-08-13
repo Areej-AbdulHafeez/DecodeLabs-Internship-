@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Expense Tracker</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header class="header">
+    
+    <div>
+      <h1>Expense Tracker</h1>
+      <p></p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Add New Expense</h2>
+
+      <form action="/add" method="POST">
+        <input type="text" name="name" placeholder="Expense name (e.g. Food)" required>
+        <input type="text" name="amount" placeholder="Amount (e.g. 500)" required>
+        <button type="submit">+ Add Expense</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Your Expenses</h2>
+
+      <ul id="expenseList">
+        {% if expenses|length == 0 %}
+          <li class="empty">Abhi tak koi expense nahi</li>
+        {% else %}
+          {% for expense in expenses %}
+            <li>
+              <span>{{ expense.name }}</span>
+              <span>
+                <span class="amt">Rs. {{ "%.0f"|format(expense.amount) }}</span>
+                <a class="del" href="/delete/{{ loop.index0 }}">Delete</a>
+              </span>
+            </li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+
+      <div class="total-row">
+        <span>Total Spent</span>
+        <span>Rs. {{ "%.0f"|format(total) }}</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
